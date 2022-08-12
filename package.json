@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/nuglah/ryan-green-readme-generator/issues"
   },
-  "homepage": "https://github.com/nuglah/ryan-green-readme-generator#readme"
+  "homepage": "https://github.com/nuglah/ryan-green-readme-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
 }
