@@ -1,41 +1,51 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// Renders the badge for the license at the top of the readme.
 function renderLicenseBadge(licenses) {
   if (licenses === "BSD") {
     return "[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)";
   }
+  if (licenses === "MIT") {
+    return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+  }
+  if (licenses === "Eclipse") {
+    return "[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)";
+  }
+
   return "";
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// Renders license link in license section
 function renderLicenseLink(licenses) {
   if (licenses === "BSD") {
     return "https://opensource.org/licenses/BSD-3-Clause";
   }
+  if (licenses === "MIT") {
+    return "https://opensource.org/licenses/MIT)";
+  }
+  if (licenses === "Eclipse") {
+    return "https://opensource.org/licenses/EPL-1.0)";
+  }
+  return "";
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// Puts name of license in license section.
 function renderLicenseSection(licenses) {
   if (licenses === "BSD") {
     return "BSD-3-Clause";
   }
+  if (licenses === "MIT") {
+    return "The MIT License";
+  }
+  if (licenses === "Eclipse") {
+    return "Eclipse Public License, Version 1.0 (EPL-1.0)";
+  }
 }
 
-// function generateMarkdown(data) {
-//   if ("title" in data) {
-//     return `#${data.title}`;
-//   }
-//   if ("description" in data) {
-//     return `#${data.description}`;
-//   }
-//   if ("installation" in data) {
-//     return `#${data.installation}`;
-//   }
-// }
+// Renders a link to github page with the github username that is entered.
+function renderGithubLink(username) {
+  return `https://github.com/${username}`;
+}
 
-// TODO: Create a function to generate markdown for README
+// Main function that build the content of the readme with the responses you type in the terminal to the inquirer questions.
 function generateMarkdownOld(response) {
   console.log(response);
   return `# ${response.title}
@@ -45,12 +55,12 @@ function generateMarkdownOld(response) {
 
 
   # Table of Contents
--[Installation](##Installation)
--[Usage](##Usage)
--[Licenses](##Licenses)
--[Contributing](##Contributing)
--[Test](##Test)
--[Questions](##Questions)
+-[Installation](#installation)
+-[Usage](#usage)
+-[Licenses](#licenses)
+-[Contributing](#contributing)
+-[Test](#test)
+-[Questions](#questions)
 
 
 # Installation 
@@ -76,16 +86,15 @@ ${response.test}
 
 # Questions
 
-# username
-${response.username}
+## Github Username
+${renderGithubLink(response.username)}
+
+## Email
+To contact me use the following email address ${
+    response.email
+  } for any additional questions.
 
     
-# email
-${response.email}
-
-    
-# profile 
-${response.profile}
 
 
 `;

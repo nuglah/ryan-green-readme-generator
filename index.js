@@ -1,5 +1,5 @@
+// require for inquirer and links the questions, genrateFile, and generateMarkdown files.
 const inquirer = require("inquirer");
-
 const questions = require("./utils/questions");
 const { writeFile } = require("./utils/generateFile");
 const {
@@ -7,10 +7,9 @@ const {
   generateMarkdownOld,
 } = require("./utils/generateMarkdown");
 
-// TODO: Create a function to initialize app
+// Starts the app when initialized and starts inquirer and writes the file with content from generateMarkdown to a README.d in output folder.
 function init() {
   inquirer.prompt(questions).then((response) => {
-    // output.push(response.title);
     const markdown = generateMarkdownOld(response);
     console.log("response: ", response);
     writeFile("./output/README.md", markdown);

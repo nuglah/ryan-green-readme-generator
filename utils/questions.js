@@ -1,3 +1,4 @@
+// Array of objects for the questions in the inquierer.
 const questions = [
   {
     type: "input",
@@ -33,7 +34,7 @@ const questions = [
     type: "list",
     message: "What license wpuld you like your app to have?",
     name: "licenses",
-    choices: ["BSD", "Creative Commons", "Eclipse"],
+    choices: ["BSD", "MIT", "Eclipse"],
   },
   {
     type: "input",
