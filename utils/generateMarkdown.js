@@ -10,62 +10,66 @@ function renderLicenseLink(license) {}
 // If there is no license, return an empty string
 function renderLicenseSection(license) {}
 
-function generateMarkdown(data) {
-  if ("title" in data) {
-    return `#${data.title}`;
-  }
-  if ("description" in data) {
-    return `#${data.description}`;
-  }
-  if ("installation" in data) {
-    return `#${data.installation}`;
-  }
-}
+// function generateMarkdown(data) {
+//   if ("title" in data) {
+//     return `#${data.title}`;
+//   }
+//   if ("description" in data) {
+//     return `#${data.description}`;
+//   }
+//   if ("installation" in data) {
+//     return `#${data.installation}`;
+//   }
+// }
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdownOld(data) {
-  return `# ${data.title}
+function generateMarkdownOld(response) {
+  return `# ${response.title}
+
+  ##Description: ${response.description}
+
+
   # Table of Content
--[description](#description)
--[installation](#installation)
--[usage](#usage)
--[licenses](#licenses)
--[contribution](#contribution)
--[test](#test)
--[username](#username)
--[profile](#profile)
+-[Installation](#Installation)
+-[Usage](#Usage)
+-[Licenses](#Licenses)
+-[Contributing](#Contributing)
+-[Test](#Test)
+-[Questions](#Questions)
 
-${response.username}
-##username:
 
-    ${response.description}
-##description:
 
-    ${response.installation}
-##installation:
 
-    ${response.usage}
-##usage:
+    
 
-    ${response.licenses}
-##licenses:
 
-    ${response.contribution}
-##contribution:
+    
+##Installation: ${response.installation}
 
-    ${response.test}
-##test:
+   
+##Usage:  ${response.usage}
 
-    ${response.email}
-##email:
+    
+##Licenses: ${response.licenses}
 
-    ${response.profile}
-##profile:
+    
+##Contributing: ${response.contribution}
+
+    
+##Test: ${response.test}
+
+##username: ${response.username}
+
+    
+##email: ${response.email}
+
+    
+##profile: ${response.profile}
 
 
 `;
 }
 
 module.exports = {
-  generateMarkdown,
+  generateMarkdownOld,
 };
