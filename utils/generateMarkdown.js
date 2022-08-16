@@ -51,7 +51,8 @@ function generateMarkdownOld(response) {
   return `# ${response.title}
    ${renderLicenseBadge(response.licenses)}
 
-  ## Description: ${response.description}
+  ## Description: 
+  ${response.description}
 
 
   # Table of Contents
@@ -63,33 +64,33 @@ function generateMarkdownOld(response) {
 -[Questions](#questions)
 
 
-# Installation 
+# Installation: 
 ${response.installation}
 
    
-# Usage  
+# Usage: 
 ${response.usage}
 
     
-# Licenses
+# Licenses:
 ${renderLicenseSection(response.licenses)}
 ${renderLicenseLink(response.licenses)}
 
     
-# Contributing 
+# Contributing:
 ${response.contribution}
 
     
-# Test
+# Test:
 ${response.test}
 
 
-# Questions
+# Questions:
 
-## Github Username
+## Github Profile:
 ${renderGithubLink(response.username)}
 
-## Email
+## Email:
 To contact me use the following email address ${
     response.email
   } for any additional questions.

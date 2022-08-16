@@ -12,7 +12,8 @@ function init() {
   inquirer.prompt(questions).then((response) => {
     const markdown = generateMarkdownOld(response);
     console.log("response: ", response);
-    writeFile("./output/README.md", markdown);
+    // writeFile("./output/README.md", markdown);
+    writeFile(response.title, markdown);
   });
 }
 
