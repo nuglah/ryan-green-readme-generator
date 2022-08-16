@@ -12,7 +12,33 @@ const questions = [
   {
     type: "input",
     name: "installation",
-    message: "add a link to your app here...",
+    message: "how will your app be installed?",
+  },
+  {
+    type: "input",
+    name: "usage",
+    message: "how is your app used?",
+  },
+  {
+    type: "input",
+    name: "contribution",
+    message: "what are your guidelines for contribution?",
+  },
+  {
+    type: "input",
+    name: "test",
+    message: "what are your instructions for testing your app?",
+  },
+  {
+    type: "list",
+    message: "What license wpuld you like your app to have?",
+    name: "licenses",
+    choices: ["BSD", "Creative Commons", "Eclipse"],
+  },
+  {
+    type: "input",
+    name: "username",
+    message: "What is your Github username?",
   },
 ];
 

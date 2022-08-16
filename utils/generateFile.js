@@ -5,7 +5,7 @@ function writeFile(path, content) {
   //console.log("something happened");
   fs.appendFile(path, content, function (err) {
     if (err) throw err;
-    console.log("Saved!");
+    console.log("README.md Generated.");
   });
 }
 module.exports = {
